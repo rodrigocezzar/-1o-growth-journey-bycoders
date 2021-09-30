@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Quotations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Factory cost</th>
+      <th>Form payment</th>
+      <th>Minimal sale value</th>
+      <th>Reserve cost</th>
+      <th>Credit card fee</th>
+      <th>Installments</th>
+      <th>Net value</th>
+      <th>Discount</th>
+      <th>Tax</th>
+      <th>Manager commission</th>
+      <th>Assembler commission</th>
+      <th>Seller commission</th>
+      <th>Shipping cost</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quotations.each do |quotation| %>
+      <tr>
+        <td><%= quotation.name %></td>
+        <td><%= quotation.value %></td>
+        <td><%= quotation.factory_cost %></td>
+        <td><%= quotation.form_payment %></td>
+        <td><%= quotation.minimal_sale_value %></td>
+        <td><%= quotation.reserve_cost %></td>
+        <td><%= quotation.credit_card_fee %></td>
+        <td><%= quotation.installments %></td>
+        <td><%= quotation.net_value %></td>
+        <td><%= quotation.discount %></td>
+        <td><%= quotation.tax %></td>
+        <td><%= quotation.manager_commission %></td>
+        <td><%= quotation.assembler_commission %></td>
+        <td><%= quotation.seller_commission %></td>
+        <td><%= quotation.shipping_cost %></td>
+        <td><%= link_to 'Edit', edit_quotation_path(quotation) %></td>
+        <td><%= link_to 'Destroy', quotation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Quotation', new_quotation_path %>
+
+<%= link_to 'Back', root_path %>

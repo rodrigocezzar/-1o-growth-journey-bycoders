@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @user.email %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Form payment</th>
+      <th>Credit card fee</th>
+      <th>Installments</th>
+      <th>Net value</th>
+      <th>Discount</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.quotations.each do |quotation| %>
+      <tr>
+        <td><%= quotation.name %></td>
+        <td><%= quotation.value %></td>
+        <td><%= quotation.form_payment %></td>
+        <td><%= quotation.credit_card_fee %></td>
+        <td><%= quotation.installments %></td>
+        <td><%= quotation.net_value %></td>
+        <td><%= quotation.discount %></td>
+        <td><%= link_to 'Edit', edit_quotation_path(quotation) %></td>
+        <td><%= link_to 'Destroy', quotation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<h1>Acumulado de Vendas</h1>
+<%= number_to_currency(@total_seller) %>
+
+<h1>Total Comissão</h1>
+<%= number_to_currency(@total) %>
+
+<br>
+
+<%= link_to 'Back', users_path %>

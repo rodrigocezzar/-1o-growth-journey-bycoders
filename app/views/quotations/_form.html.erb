@@ -1,0 +1,95 @@
+<%= form_with(model: quotation) do |form| %>
+  <% if quotation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(quotation.errors.count, "error") %> prohibited this quotation from being saved:</h2>
+
+      <ul>
+        <% quotation.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.text_field :value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :discount %>
+    <%= form.text_field :discount %>
+  </div>
+
+  <div class="field">
+    <%= form.label :installments %>
+    <%= form.number_field :installments %>
+  </div>
+
+  <div class="field">
+    <%= form.label :credit_card_fee %>
+    <%= form.text_field :credit_card_fee %>
+  </div>
+
+  <% unless @quotation.new_record? %>
+    <div class="field">
+      <%= form.label :factory_cost %>
+      <%= form.text_field :factory_cost %>
+    </div>
+
+    <div class="field">
+      <%= form.label :form_payment %>
+      <%= form.text_field :form_payment %>
+    </div>
+
+    <div class="field">
+      <%= form.label :minimal_sale_value %>
+      <%= form.text_field :minimal_sale_value %>
+    </div>
+
+    <div class="field">
+      <%= form.label :reserve_cost %>
+      <%= form.text_field :reserve_cost %>
+    </div>
+
+    <div class="field">
+      <%= form.label :net_value %>
+      <%= form.text_field :net_value %>
+    </div>
+
+    <div class="field">
+      <%= form.label :tax %>
+      <%= form.text_field :tax %>
+    </div>
+
+    <div class="field">
+      <%= form.label :manager_commission %>
+      <%= form.text_field :manager_commission %>
+    </div>
+
+    <div class="field">
+      <%= form.label :assembler_commission %>
+      <%= form.text_field :assembler_commission %>
+    </div>
+
+    <div class="field">
+      <%= form.label :seller_commission %>
+      <%= form.text_field :seller_commission %>
+    </div>
+
+    <div class="field">
+      <%= form.label :shipping_cost %>
+      <%= form.text_field :shipping_cost %>
+    </div>
+  <% end %>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,12 @@
+AllCops:
+  Exclude:
+    - config/**/*
+    - bin/**/*
+    - app/helpers/**/*
+    - config/**/*
+    - db/**/*
+    - test/test_helper.rb
+    - spec/**/*
+    - node_modules/**/*
+Style/Documentation:
+  Enabled: false

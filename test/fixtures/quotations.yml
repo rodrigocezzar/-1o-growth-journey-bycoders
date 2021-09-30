@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quotation_id: 1
+  user_id: 1
+  quotation_status: MyString
+  quotation_value: 9.99
+  suggested_sale_value: 9.99
+  form_payment: MyString
+  product_name: MyString
+  quote_date: 2021-08-21 15:53:51
+
+two:
+  quotation_id: 1
+  user_id: 1
+  quotation_status: MyString
+  quotation_value: 9.99
+  suggested_sale_value: 9.99
+  form_payment: MyString
+  product_name: MyString
+  quote_date: 2021-08-21 15:53:51

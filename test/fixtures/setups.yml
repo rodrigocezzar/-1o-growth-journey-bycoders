@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  factory_cost: 9.99
+  manager_commission: 9.99
+  assemler_commission: 9.99
+  shipping_company: 9.99
+  finder: 9.99
+  technical_reserve: 9.99
+  tax: 9.99
+  negotiated_value: 9.99
+  sale_seller: 9.99
+
+two:
+  factory_cost: 9.99
+  manager_commission: 9.99
+  assemler_commission: 9.99
+  shipping_company: 9.99
+  finder: 9.99
+  technical_reserve: 9.99
+  tax: 9.99
+  negotiated_value: 9.99
+  sale_seller: 9.99
