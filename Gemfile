@@ -28,6 +28,7 @@ gem 'devise', '~> 4.8'
 gem 'jsonapi-serializer', '~> 2.2'
 gem 'pry', '~> 0.13.1'
 gem 'devise_token_auth', '~> 1.1', '>= 1.1.5'
+gem 'rails_admin', '~> 2.2', '>= 2.2.1'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

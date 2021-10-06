@@ -20,6 +20,7 @@
       <th>Assembler commission</th>
       <th>Seller commission</th>
       <th>Shipping cost</th>
+      <th>Finder Commission</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -42,6 +43,7 @@
         <td><%= quotation.assembler_commission %></td>
         <td><%= quotation.seller_commission %></td>
         <td><%= quotation.shipping_cost %></td>
+        <td><%= quotation.finder_commission %></td>
         <td><%= link_to 'Edit', edit_quotation_path(quotation) %></td>
         <td><%= link_to 'Destroy', quotation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

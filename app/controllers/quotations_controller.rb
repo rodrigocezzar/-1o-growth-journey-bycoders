@@ -25,10 +25,14 @@ class QuotationsController < ApplicationController
   def edit; end
 
   def update
-    if @quotation.update(quotation_params)
-      redirect_to quotations_path
+    if params[:quotation][:discount].to_i < 23
+      if @quotation.update(quotation_params)
+        redirect_to quotations_path
+      else
+        render json: @quotation.errors, status: :unprocessable_entity
+      end
     else
-      render json: @quotation.errors, status: :unprocessable_entity
+      render json: 'Não Autorizado', status: :unprocessable_entity
     end
   end
 
@@ -44,6 +48,6 @@ class QuotationsController < ApplicationController
   end
 
   def quotation_params
-    params.require(:quotation).permit(:name, :value, :installments, :discount)
+    params.require(:quotation).permit(:name, :value, :installments, :discount, :finder_commission)
   end
 end
