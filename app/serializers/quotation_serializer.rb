@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
 class QuotationSerializer < ApplicationSerializer
-  attributes :user, :id, :name, :status, :value, :factory_cost, :form_payment,
-             :minimal_sale_value, :reserve_cost, :credit_card_fee, :installments,
-             :finder_commission
+  attributes :user, :id, :name, :suggested_price_manufactures, :status, :value, :form_payment,
+             :minimal_sale_value, :credit_card_fee, :installments, :finder_commission, :minimal_percent
 end
 
 # t.integer "user_id"

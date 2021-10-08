@@ -43,6 +43,9 @@ ActiveRecord::Schema.define(version: 2021_08_23_223648) do
     t.decimal "seller_commission", default: "0.0"
     t.decimal "finder_commission", default: "0.0"
     t.decimal "shipping_cost", default: "0.0"
+    t.decimal "minimal_percent", default: "0.0"
+    t.decimal "result", default: "0.0"
+    t.decimal "suggested_price_manufactures", default: "0.0"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_quotations_on_user_id"
@@ -60,6 +63,10 @@ ActiveRecord::Schema.define(version: 2021_08_23_223648) do
     t.decimal "tax", default: "0.0"
     t.decimal "negotiated_value", default: "0.0"
     t.decimal "discount", default: "0.0"
+    t.decimal "suggested_price_manufactures", default: "0.0"
+    t.decimal "minimal_percent", default: "0.0"
+    t.decimal "result", default: "0.0"
+    t.decimal "cost_index", default: "0.0"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

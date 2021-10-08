@@ -20,6 +20,10 @@ class CreateQuotations < ActiveRecord::Migration[6.1]
       t.decimal :seller_commission, default: 0.0
       t.decimal :finder_commission, default: 0.0
       t.decimal :shipping_cost, default: 0.0
+      t.decimal :minimal_percent, default: 0.0
+      t.decimal :result, default: 0.0      
+      t.decimal :suggested_price_manufactures, default: 0.0
+      
       
 
       t.timestamps

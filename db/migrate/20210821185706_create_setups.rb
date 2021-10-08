@@ -12,6 +12,10 @@ class CreateSetups < ActiveRecord::Migration[6.1]
       t.decimal :tax, default: 0.0
       t.decimal :negotiated_value, default: 0.0
       t.decimal :discount, default: 0.0
+      t.decimal :suggested_price_manufactures, default: 0.0
+      t.decimal :minimal_percent, default: 0.0
+      t.decimal :result, default: 0.0  
+      t.decimal :cost_index, default: 0.0
 
       t.timestamps
     end

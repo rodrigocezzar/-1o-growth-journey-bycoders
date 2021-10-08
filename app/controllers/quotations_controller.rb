@@ -25,7 +25,7 @@ class QuotationsController < ApplicationController
   def edit; end
 
   def update
-    if params[:quotation][:discount].to_i < 23
+    if params[:quotation][:value].to_i >= params[:quotation][:minimal_sale_value].to_i
       if @quotation.update(quotation_params)
         redirect_to quotations_path
       else
@@ -48,6 +48,6 @@ class QuotationsController < ApplicationController
   end
 
   def quotation_params
-    params.require(:quotation).permit(:name, :value, :installments, :discount, :finder_commission)
+    params.require(:quotation).permit(:name, :value, :installments, :discount, :finder_commission, :suggested_price_manufactures, :factory_cost, :credit_card_fee, :result)
   end
 end

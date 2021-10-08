@@ -48,7 +48,7 @@ module Api
       end
 
       def quotation_params
-        params.require(:quotation).permit(:name, :value, :installments, :discount, :user_id)
+        params.require(:quotation).permit(:name, :value, :installments, :discount, :user_id, :suggested_price_manufactures, :minimal_percent)
       end
     end
   end
