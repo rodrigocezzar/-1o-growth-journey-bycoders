@@ -30,6 +30,7 @@ gem 'pry', '~> 0.13.1'
 gem 'devise_token_auth', '~> 1.1', '>= 1.1.5'
 gem 'prawn', '~> 2.4'
 gem 'rails_admin', '~> 2.2', '>= 2.2.1'
+gem 'spring'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -49,15 +50,15 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  
 end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  # gem 'capybara', '>= 3.26'
-  # gem 'selenium-webdriver'
+  gem 'capybara', '>= 3.26'
+  gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
-  # gem 'webdrivers'
+  gem 'webdrivers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
