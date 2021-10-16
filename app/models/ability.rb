@@ -11,13 +11,13 @@ class Ability
   #     can [:read], User
   #   end
   # end
-  def initialize(user)
-    user ||= User.new
+  # def initialize(user)
+  #   user ||= User.new
 
-    if user.admin?
-      can [:read], Quotation
-    else
-      # non-admin abilities
-    end
-  end
+  #   if user.admin?
+  #     can [:read], Quotation
+  #   else
+  #     # non-admin abilities
+  #   end
+  # end
 end
