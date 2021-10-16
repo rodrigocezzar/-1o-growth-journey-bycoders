@@ -8,6 +8,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
 
       t.string :provider, :null => false, :default => "email"
       t.string :uid, :null => false, :default => ""
+      t.boolean :admin, default: false
 
        ## Tokens
        t.json :tokens

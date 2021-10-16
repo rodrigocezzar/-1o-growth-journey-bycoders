@@ -46,6 +46,7 @@
         <td><%= quotation.seller_commission %></td>
         <td><%= quotation.shipping_cost %></td>
         <td><%= quotation.finder_commission %></td>
+        <td><%= link_to 'PDF', quotation_path(quotation.id, format: "pdf") %></td>
         <td><%= link_to 'Edit', edit_quotation_path(quotation) %></td>
         <td><%= link_to 'Destroy', quotation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

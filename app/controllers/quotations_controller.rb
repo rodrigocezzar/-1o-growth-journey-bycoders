@@ -12,6 +12,19 @@ class QuotationsController < ApplicationController
     @quotation = Quotation.new
   end
 
+  def show
+    @quotation = Quotation.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = QuotationPdf.new(@quotation)
+        send_data pdf.render, filename: "quotation_#{@quotation.id}.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
+      end
+    end
+  end
+
   def create
     @quotation = Quotation.new(quotation_params)
 
@@ -48,6 +61,6 @@ class QuotationsController < ApplicationController
   end
 
   def quotation_params
-    params.require(:quotation).permit(:name, :value, :installments, :discount, :finder_commission, :suggested_price_manufactures, :factory_cost, :credit_card_fee, :result)
+    params.require(:quotation).permit(:user_id, :name, :value, :installments, :discount, :finder_commission, :suggested_price_manufactures, :factory_cost, :credit_card_fee, :result)
   end
 end

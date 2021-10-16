@@ -7,11 +7,7 @@
     <tr>
       <th>Name</th>
       <th>Value</th>
-      <th>Form payment</th>
-      <th>Credit card fee</th>
-      <th>Installments</th>
-      <th>Net value</th>
-      <th>Discount</th>
+      <th>Seller Commission</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,11 +17,7 @@
       <tr>
         <td><%= quotation.name %></td>
         <td><%= quotation.value %></td>
-        <td><%= quotation.form_payment %></td>
-        <td><%= quotation.credit_card_fee %></td>
-        <td><%= quotation.installments %></td>
-        <td><%= quotation.net_value %></td>
-        <td><%= quotation.discount %></td>
+        <td><%= quotation.seller_commission %></td>
         <td><%= link_to 'Edit', edit_quotation_path(quotation) %></td>
         <td><%= link_to 'Destroy', quotation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

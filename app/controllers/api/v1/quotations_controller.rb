@@ -12,6 +12,12 @@ module Api
         render status: :ok, json: { quotations: QuotationSerializer.new(@quotations).to_h }
       end
 
+      def new_quotation
+        @quotations = Quotation.new(suggested_price_manufactures: params[:value])
+
+        render status: :ok, json: { quotations: QuotationSerializer.new(@quotations).to_h }
+      end
+
       def new
         @quotation = Quotation.new
       end
@@ -23,6 +29,19 @@ module Api
           render status: :ok, json: { quotations: QuotationSerializer.new(@quotation).to_h }
         else
           render json: @quotation.errors, status: :unprocessable_entity
+        end
+      end
+
+      def show
+        @quotation = Quotation.find(params[:id])
+        respond_to do |format|
+          format.html
+          format.pdf do
+            pdf = QuotationPdf.new(@quotation)
+            send_data pdf.render, filename: "quotation_#{@quotation.id}.pdf",
+                                  type: "application/pdf",
+                                  disposition: "inline"
+          end
         end
       end
 
